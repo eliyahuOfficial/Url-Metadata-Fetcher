@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const UrlInputForm: React.FC = () => {
+    const API_URL = import.meta.env.VITE_API_URL || 'https://url-metadata-fetcher-server.onrender.com';
     const [urls, setUrls] = useState<string[]>(['']);
     const [metadata, setMetadata] = useState<any[]>([]);
     const [error, setError] = useState<string | null>(null);
@@ -18,7 +19,7 @@ const UrlInputForm: React.FC = () => {
 
     const handleSubmit = async () => {
         try {
-            const response = await axios.post('/fetch-metadata', { urls });
+            const response = await axios.post(`${API_URL}/fetch-metadata`, { urls });
             setMetadata(response.data);
             setError(null);
         } catch (error) {
