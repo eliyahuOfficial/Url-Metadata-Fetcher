@@ -42,6 +42,10 @@ To run this project locally, follow these steps:
 
 `npm i`
 
+-- Create a `.env` file and set the port to 8080:
+
+`PORT=8080`
+
 -- Run the server:
 
 `npm run dev`
