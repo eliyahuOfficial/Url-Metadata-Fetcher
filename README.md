@@ -67,11 +67,11 @@ The `UrlInputForm` component on the client-side fetches data from the backend us
 By default, this is set to `'https://url-metadata-fetcher-server.onrender.com'` if `VITE_API_URL` is not specified.
 If you want to connect the client to a local backend server running on `http://localhost:8080`, you can:
 
-1.Create or update the `.env` file in the client directory to include:
+1. Create or update the `.env` file in the client directory to include:
 
   `VITE_API_URL=http://localhost:8080`
   
-2.Alternatively, ensure that the `vite.config.ts` file is configured like this:
+2. Alternatively, ensure that the `vite.config.ts` file is configured like this:
 
   `import { defineConfig } from 'vite';
   import react from '@vitejs/plugin-react';
