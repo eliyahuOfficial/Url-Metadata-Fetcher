@@ -63,8 +63,25 @@ The backend server will start on http://localhost:8080.
 
 -- Configure API URL:
 
-The client-side is currently configured to connect to the production backend at https://url-metadata-fetcher-server.onrender.com.
-If you want to run the client-side locally with a backend running on http://localhost:8080, make sure to update the API URL in the vite.config.ts file.
+The `UrlInputForm` component on the client-side fetches data from the backend using the API URL defined in `import.meta.env.VITE_API_URL`.
+By default, this is set to `'https://url-metadata-fetcher-server.onrender.com'` if `VITE_API_URL` is not specified.
+If you want to connect the client to a local backend server running on `http://localhost:8080`, you can:
+
+1.Create or update the `.env` file in the client directory to include:
+
+  VITE_API_URL=http://localhost:8080
+  
+2.Alternatively, ensure that the `vite.config.ts` file is configured like this:
+
+  import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+  define: {
+    'process.env.VITE_API_URL': JSON.stringify(process.env.VITE_API_URL || 'http://localhost:8080'),
+  },
+});
 
 -- Run the client:
 
