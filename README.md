@@ -69,19 +69,18 @@ If you want to connect the client to a local backend server running on `http://l
 
 1.Create or update the `.env` file in the client directory to include:
 
-  VITE_API_URL=http://localhost:8080
+  `VITE_API_URL=http://localhost:8080`
   
 2.Alternatively, ensure that the `vite.config.ts` file is configured like this:
 
-  import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-
-export default defineConfig({
+  `import { defineConfig } from 'vite';
+  import react from '@vitejs/plugin-react';
+  export default defineConfig({
   plugins: [react()],
   define: {
     'process.env.VITE_API_URL': JSON.stringify(process.env.VITE_API_URL || 'http://localhost:8080'),
-  },
-});
+    },
+  });`
 
 -- Run the client:
 
