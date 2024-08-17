@@ -2,6 +2,8 @@
 
 This project is a simple web application built with React and TypeScript that allows users to fetch and display metadata (title, description, and image) from a list of URLs.
 
+Live project --- https://url-metadata-fetcher-client.onrender.com/
+
 ## Features
 
 - **Add URLs**: Users can input multiple URLs to fetch metadata.
