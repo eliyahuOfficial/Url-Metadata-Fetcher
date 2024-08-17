@@ -2,7 +2,7 @@
 
 This project is a simple web application built with React and TypeScript that allows users to fetch and display metadata (title, description, and image) from a list of URLs.
 
-Live project --- https://url-metadata-fetcher-client.onrender.com/
+**Live project**: [https://url-metadata-fetcher-client.onrender.com/](https://url-metadata-fetcher-client.onrender.com/)
 
 ## Features
 
@@ -61,13 +61,18 @@ The backend server will start on http://localhost:8080.
 
 `npm i`
 
+-- Configure API URL:
+
+The client-side is currently configured to connect to the production backend at https://url-metadata-fetcher-server.onrender.com.
+If you want to run the client-side locally with a backend running on http://localhost:8080, make sure to update the API URL in the vite.config.ts file.
+
 -- Run the client:
 
 `npm run dev`
 
 The frontend application will start on http://localhost:5173.
 
-
+### Testing
 
 The tests cover various scenarios, including:
 
@@ -77,8 +82,15 @@ Displaying appropriate error messages.
 Ensuring that images, titles, and descriptions are displayed correctly.
 Deployment
 
+### Deployment
+
+The application is deployed using Render:
+
+-- Backend: Deployed to Render. The server address is available at https://url-metadata-fetcher-server.onrender.com.
+-- Frontend: Deployed to Render. The client is configured to automatically use the backend server address during the build process.
 
 ### Security
+
 This project uses the following security best practices:
 
 --- Helmet: Used to secure HTTP headers.
