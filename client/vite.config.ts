@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/fetch-metadata': 'http://localhost:8080',
+      '/fetch-metadata': 'https://url-metadata-fetcher-server.onrender.com',
     },
   },
 });
